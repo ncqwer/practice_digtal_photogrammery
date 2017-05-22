@@ -1,0 +1,2 @@
+add_executable(orientation_test orientation_test.cpp)
+target_link_libraries(orientation_test pdp)
