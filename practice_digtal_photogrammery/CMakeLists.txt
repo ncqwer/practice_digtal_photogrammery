@@ -4,6 +4,13 @@ set(source_file ${source_file}
 set(source_file ${source_file}
 		absolute_orientation/absolute_orientation_kernal_1.cpp)
 
+set(source_file ${source_file}
+		dense_match/sgm.cpp)
+
+set(source_file ${source_file}
+		dense_match/sgbm.cpp)
+
+
 
 
 add_library(pdp ${source_file})

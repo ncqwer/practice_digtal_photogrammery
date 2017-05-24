@@ -175,8 +175,8 @@ void calculate_A(
 	double lamba = paras(3);
 	double sin_phi = sin(paras(4));
 	double cos_phi = cos(paras(4));
-	double sin_omega = sin(paras(4));
-	double cos_omega = cos(paras(4));
+	double sin_omega = sin(paras(5));
+	double cos_omega = cos(paras(5));
 
 	Eigen::Matrix<double,3,1> derivate_phi;
 	derivate_phi(0) = -lamba*temp_Z;
