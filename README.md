@@ -11,5 +11,14 @@
     + Gitbook(可选，用于生成api文档)
 - 代码管理：Git
 
-##贡献代码地址
+
+## 贡献代码地址
+
 [https://github.com/ncqwer/practice_digtal_photogrammery/tree/dev](https://github.com/ncqwer/practice_digtal_photogrammery/tree/dev)
+
+## 文档地址
+[https://www.gitbook.com/book/ncqwer/practice_digtal_photogrammery_doc/details](https://www.gitbook.com/book/ncqwer/practice_digtal_photogrammery_doc/details)
+
+## 文档贡献地址
+
+[https://github.com/ncqwer/practice_digtal_photogrammery_doc/tree/dev](https://github.com/ncqwer/practice_digtal_photogrammery_doc/tree/dev)
