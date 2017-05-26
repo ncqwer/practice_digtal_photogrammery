@@ -60,11 +60,11 @@ public:
 			}
 			Eigen::MatrixXd delta = ATA.inverse() * ATL;
 			Eigen::MatrixXd new_paras = _paras + delta;
-			std::cout<<"============================="<<std::endl;
-			std::cout<<"ATA:"<<std::endl<<ATA<<std::endl;
-			std::cout<<"ATL:"<<std::endl<<ATL<<std::endl;
-			std::cout<<"paras:"<<std::endl<<_paras<<std::endl;
-			std::cout<<"delta:"<<std::endl<<delta<<std::endl;
+			// std::cout<<"============================="<<std::endl;
+			// std::cout<<"ATA:"<<std::endl<<ATA<<std::endl;
+			// std::cout<<"ATL:"<<std::endl<<ATL<<std::endl;
+			// std::cout<<"paras:"<<std::endl<<_paras<<std::endl;
+			// std::cout<<"delta:"<<std::endl<<delta<<std::endl;
 			if (isInThresh(delta))
 			{
 				double VTV=0.0;

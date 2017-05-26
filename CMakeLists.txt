@@ -23,3 +23,4 @@ include_directories(/usr/local/include/eigen3)
 
 add_subdirectory(practice_digtal_photogrammery)
 add_subdirectory(test)
+add_subdirectory(work)

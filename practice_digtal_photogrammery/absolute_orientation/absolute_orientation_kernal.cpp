@@ -41,11 +41,11 @@ void absolute_orientation_kernal(
 			ATL += A.transpose()*L;
 		}
 		Eigen::Matrix<double,7,1> delta = ATA.inverse()*ATL;
-		std::cout<<"============================="<<std::endl;
-		std::cout<<"ATA:"<<std::endl<<ATA<<std::endl;
-		std::cout<<"ATL:"<<std::endl<<ATL<<std::endl;
-		std::cout<<"paras:"<<std::endl<<paras<<std::endl;
-		std::cout<<"delta:"<<std::endl<<delta<<std::endl;
+		// std::cout<<"============================="<<std::endl;
+		// std::cout<<"ATA:"<<std::endl<<ATA<<std::endl;
+		// std::cout<<"ATL:"<<std::endl<<ATL<<std::endl;
+		// std::cout<<"paras:"<<std::endl<<paras<<std::endl;
+		// std::cout<<"delta:"<<std::endl<<delta<<std::endl;
 		if(isInTresh(delta))
 		{
 			double VTV = 0;
@@ -106,7 +106,7 @@ void initial(
 	for(auto &model_pt : model_pts)
 	{
 		model_pt -= model_sum;
-		std::cout<<"model_pt:"<<std::endl<<model_pt<<std::endl;
+		// std::cout<<"model_pt:"<<std::endl<<model_pt<<std::endl;
 	}
 
 	Point grand_sum = Point::Zero();
@@ -118,12 +118,12 @@ void initial(
 	for(auto &grand_pt : grand_pts)
 	{
 		grand_pt -= grand_sum;
-		std::cout<<"grand_pt:"<<std::endl<<grand_pt<<std::endl;
+		// std::cout<<"grand_pt:"<<std::endl<<grand_pt<<std::endl;
 
 	}
-	std::cout<<"============================="<<std::endl;
-	std::cout<<"model_sum:"<<std::endl<<model_sum<<std::endl;
-	std::cout<<"grand_sum:"<<std::endl<<grand_sum<<std::endl;
+	// std::cout<<"============================="<<std::endl;
+	// std::cout<<"model_sum:"<<std::endl<<model_sum<<std::endl;
+	// std::cout<<"grand_sum:"<<std::endl<<grand_sum<<std::endl;
 	auto diff = grand_sum - model_sum;
 	paras(0) = 0;
 	paras(1) = 0;
