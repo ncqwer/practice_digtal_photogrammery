@@ -48,6 +48,7 @@ int main(int argc, char const *argv[])
 	}
 	out<<"sigma_paras:"<<std::endl<<sigma_paras<<std::endl;
 	out<<"sigma_unti:"<<sigma_unti<<std::endl;
+	out<<"paras:"<<std::endl<<paras<<std::endl;
 	return 0;
 }
 

@@ -23,11 +23,11 @@ cv::Mat forwardInterSection(
 		for (int x = 0; x < left.cols; x++)
 		{
 			float parallax = *(d_left + x);
-			if (parallax == 0)
-				break;
+			if (parallax < 100)
+				continue;
 			cv::Point3f pPoint;
 			cv::Point3i cPoint;
-			float Z = f*B / parallax;
+			float Z = 1000*f*B / (parallax);
 			float X = (x + 1 - x0)*Z / f;
 			float Y = (y + 1 - y0)*Z / f;
 
@@ -72,7 +72,8 @@ void save(
 		std::vector<cv::Point3i>& cloud_c)
 {
 	std::ofstream in(filename);
-
+	in<<"xyzrgb"<<std::endl;
+	in<<cloud_p.size()<<std::endl;
 	auto pt_b = cloud_p.begin();
 	auto color_b = cloud_c.begin();
 
@@ -144,7 +145,7 @@ int main(int argc, char const *argv[])
     disp.convertTo(disp_show, CV_8U, 255.0/number_of_disparities);
     cv::namedWindow("left origin disparity",cv::WINDOW_NORMAL);
     cv::imshow("left origin disparity", disp_show);
-
+    cv::imwrite("disparity_after.jpg",disp_show);
 	std::vector<cv::Point3f> cloud_p;
 	std::vector<cv::Point3i> cloud_c; 
 	forwardInterSection(
@@ -155,12 +156,12 @@ int main(int argc, char const *argv[])
 			cloud_p,
 			cloud_c
 			);
-	// moduleCall_kernal(
-	// 		"forwardInterSection",
-	// 		std::cout,
-	// 		forwardInterSection,
-	// 		left,disp,1,1,0,0,
-	// 		cloud_p,cloud_c);  // there is bug,cv::Mat release error
+	moduleCall_kernal(
+			"forwardInterSection",
+			std::cout,
+			forwardInterSection,
+			left,disp,1,1,0,0,
+			cloud_p,cloud_c);  // there is bug,cv::Mat release error
 	std::cout
 		<<"pt size"<<cloud_c.size()<<std::endl
 		<<"pt size"<<cloud_p.size()<<std::endl;
